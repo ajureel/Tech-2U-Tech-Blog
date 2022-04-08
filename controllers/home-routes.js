@@ -14,8 +14,8 @@ router.get('/', async (req, res) => {
     );
 
     res.render('homepage', {
-      articles,
-      loggedIn: req.session.loggedIn,
+      articles//,
+     // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
