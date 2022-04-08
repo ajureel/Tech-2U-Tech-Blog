@@ -1,6 +1,6 @@
 const { Article } = require('../models');
 
-const ArticleData = [
+const articledata = [
   {
     title: 'Blossoming Apricot',
     body: 'Branches with pink apricot blossoms against a blue background.',

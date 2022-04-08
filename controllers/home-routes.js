@@ -25,13 +25,15 @@ router.get('/', async (req, res) => {
 
 // GET one article
 // Use the custom middleware before allowing the user to access the article
-router.get('/article/:id', withAuth, async (req, res) => {
+//router.get('/article/:id', withAuth, async (req, res) => {
+router.get('/article/:id', async (req, res) => {
   try {
     const dbarticleData = await article.findByPk(req.params.id, {
     });
 
     const article = dbarticleData.get({ plain: true });
-    res.render('article', { article, loggedIn: req.session.loggedIn });
+    // res.render('article', { article, loggedIn: req.session.loggedIn });
+    res.render('article', { article });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
